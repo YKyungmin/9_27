@@ -6,10 +6,13 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
 
 	main {
 		width: 60vw;
 		height: 60vh;
+		min-width: 600px;
+		min-height: 400px;
 		position: relative;
 		perspective: 900px;
 
@@ -86,7 +89,7 @@ body {
 
 			h2 {
 				width: 100%;
-				font: bold 100px/1 'arial';
+				font: bold 3vw/1 'arial';
 				color: #fff;
 				margin-bottom: 40px;
 
