@@ -13,6 +13,7 @@ window.addEventListener('scroll', () => {
 	const scroll = window.scrollY;
 	//박스에 실 적용되는 스크롤 수치값을 반대로 300만큼 더해줘야함
 	const scroll_2 = scroll - secs[1].offsetTop - baseLine;
+	const initScroll = 0;
 
 	h1.style.transform = `translateX(${scroll}px) rotate(${scroll}deg) scale(${1 + scroll / 400})`;
 	h1.style.opacity = 1 - scroll / 400;
@@ -20,5 +21,9 @@ window.addEventListener('scroll', () => {
 	if (scroll >= secs[1].offsetTop + baseLine) {
 		h1_2.style.transform = `translateX(${scroll_2}px) rotate(${scroll_2}deg) scale(${1 + scroll_2 / 400})`;
 		h1_2.style.opacity = 1 - scroll_2 / 400;
+	} else {
+		//원래 위치러 스크롤시 조금씩 오차법위가 발생하기 때문에 원래값으로 강제 보정처리
+		h1_2.style.transform = `translateX(${scroll_2}px) rotate(${scroll_2}deg) scale(${1 + scroll_2 / 400})`;
+		h1_2.style.opacity = 1 - initScroll / 400;
 	}
 });
